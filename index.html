@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64 Encoder & Decoder</title>
+    <title>BASED64</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,6 +28,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+margin: 10px;
         }
         button:hover {
             background-color: #45a049;
@@ -50,26 +51,20 @@
     </style>
 </head>
 <body>
-    <h1>Base64 Encoder & Decoder</h1>
+    <h1>BASE64</h1>
 
-    <button class="toggle-button" onclick="toggleSection('encoderSection')">Toggle Base64 Encoder</button>
+    <button class="toggle-button" onclick="toggleSection('encoderSection')">ENCODER</button>
     <div id="encoderSection" class="hidden">
-        <h2>Base64 Encoder</h2>
-        <p>Enter text to encode it into base64:</p>
         <textarea id="inputData" rows="4" placeholder="Enter data to encode..."></textarea>
         <button onclick="encodeBase64()">Encode to Base64</button>
-        <p>Base64 Encoded Data:</p>
         <textarea id="encodedData" rows="4" readonly></textarea>
         <button onclick="copyToClipboard()">Copy to Clipboard</button>
     </div>
 
-    <button class="toggle-button" onclick="toggleSection('decoderSection')">Toggle Base64 Decoder</button>
+    <button class="toggle-button" onclick="toggleSection('decoderSection')">DECODER</button>
     <div id="decoderSection" class="hidden">
-        <h2>Base64 Decoder</h2>
-        <p>Enter Base64-encoded text to decode it back:</p>
         <textarea id="base64Data" rows="4" placeholder="Enter Base64 data to decode..."></textarea>
         <button onclick="decodeBase64()">Decode Base64</button>
-        <p>Decoded Data:</p>
         <textarea id="decodedData" rows="4" readonly></textarea>
         <button onclick="copyDecodedToClipboard()">Copy to Clipboard</button>
     </div>
