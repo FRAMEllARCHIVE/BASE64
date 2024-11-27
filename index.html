@@ -61,15 +61,15 @@
         // Function to encode input data to base64
         function encodeBase64() {
             const inputData = document.getElementById('inputData').value;
-            const encodedData = btoa(inputData); // Base64 encode the input
-            document.getElementById('encodedData').value = encodedData; // Display the encoded data
+            const encodedData = btoa(inputData);
+            document.getElementById('encodedData').value = encodedData;
         }
 
         // Function to copy encoded data to clipboard
         function copyToClipboard() {
             const encodedData = document.getElementById('encodedData');
-            encodedData.select(); // Select the encoded data
-            document.execCommand('copy'); // Copy the selection to clipboard
+            encodedData.select();
+            document.execCommand('copy');
             alert('Base64 encoded data copied to clipboard!');
         }
     </script>
