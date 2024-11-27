@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base64 Encoder</title>
     <style>
-        /* Dark Mode Styles */
+
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
@@ -58,14 +58,12 @@
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
 
     <script>
-        // Function to encode input data to base64
         function encodeBase64() {
             const inputData = document.getElementById('inputData').value;
             const encodedData = btoa(inputData);
             document.getElementById('encodedData').value = encodedData;
         }
 
-        // Function to copy encoded data to clipboard
         function copyToClipboard() {
             const encodedData = document.getElementById('encodedData');
             encodedData.select();
