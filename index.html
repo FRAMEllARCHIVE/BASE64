@@ -41,28 +41,45 @@
         p {
             margin: 10px 0;
         }
+        .hidden {
+            display: none;
+        }
+        .toggle-button {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Base64 Encoder & Decoder</h1>
 
-    <h2>Base64 Encoder</h2>
-    <p>Enter text to encode it into base64:</p>
-    <textarea id="inputData" rows="4" placeholder="Enter data to encode..."></textarea>
-    <button onclick="encodeBase64()">Encode to Base64</button>
-    <p>Base64 Encoded Data:</p>
-    <textarea id="encodedData" rows="4" readonly></textarea>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <button class="toggle-button" onclick="toggleSection('encoderSection')">Toggle Base64 Encoder</button>
+    <div id="encoderSection" class="hidden">
+        <h2>Base64 Encoder</h2>
+        <p>Enter text to encode it into base64:</p>
+        <textarea id="inputData" rows="4" placeholder="Enter data to encode..."></textarea>
+        <button onclick="encodeBase64()">Encode to Base64</button>
+        <p>Base64 Encoded Data:</p>
+        <textarea id="encodedData" rows="4" readonly></textarea>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
 
-    <h2>Base64 Decoder</h2>
-    <p>Enter Base64-encoded text to decode it back:</p>
-    <textarea id="base64Data" rows="4" placeholder="Enter Base64 data to decode..."></textarea>
-    <button onclick="decodeBase64()">Decode Base64</button>
-    <p>Decoded Data:</p>
-    <textarea id="decodedData" rows="4" readonly></textarea>
-    <button onclick="copyDecodedToClipboard()">Copy to Clipboard</button>
+    <button class="toggle-button" onclick="toggleSection('decoderSection')">Toggle Base64 Decoder</button>
+    <div id="decoderSection" class="hidden">
+        <h2>Base64 Decoder</h2>
+        <p>Enter Base64-encoded text to decode it back:</p>
+        <textarea id="base64Data" rows="4" placeholder="Enter Base64 data to decode..."></textarea>
+        <button onclick="decodeBase64()">Decode Base64</button>
+        <p>Decoded Data:</p>
+        <textarea id="decodedData" rows="4" readonly></textarea>
+        <button onclick="copyDecodedToClipboard()">Copy to Clipboard</button>
+    </div>
 
     <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('hidden');
+        }
+
         function encodeBase64() {
             const inputData = document.getElementById('inputData').value;
             const encodedData = btoa(inputData);
